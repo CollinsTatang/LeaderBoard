@@ -6,12 +6,13 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   module: {
     rules: [{
       test: /\.css$/i,
       use: ['style-loader', 'css-loader'],
-    },],
+    }],
   },
   devServer: {
     contentBase: './dist',
@@ -19,12 +20,8 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-      }),
+      template: './src/index.html',
+    }),
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
+
 };

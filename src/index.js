@@ -25,4 +25,4 @@ const displayScores = async () => {
   }
 };
 
- displayScores();
+displayScores();
