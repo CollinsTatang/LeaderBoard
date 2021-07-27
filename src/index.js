@@ -1,7 +1,6 @@
-import _ from 'lodash';
 import './style.css';
+
 const leaderContent = document.querySelector('#boardList');
-const btn = document.querySelector('#submit');
 const leaderboard = [
   {
     name: 'Collins Tatang',

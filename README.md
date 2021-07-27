@@ -27,7 +27,7 @@
 
 If you want a copy of this file go to the github repository and download it from there
 
-- [`https://github.com/CollinsTatang/To-Do-List.git`](https://github.com/CollinsTatang/LeaderBoard.git)
+- [`https://github.com/CollinsTatang/LeaderBoard.git`](https://github.com/CollinsTatang/LeaderBoard.git)
 
 
 #### Setup
