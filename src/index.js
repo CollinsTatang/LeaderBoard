@@ -1,14 +1,29 @@
 import _ from 'lodash';
 import './style.css';
+const leaderContent = document.querySelector('#boardList');
+const btn = document.querySelector('#submit');
+const leaderboard = [
+  {
+    name: 'Collins Tatang',
+    score: 70,
+  },
+  {
+    name: 'Tatang James',
+    score: 100,
+  },
+];
 
-function component() {
-    const element = document.createElement('div');
+const displayScores = async () => {
+  if (leaderboard !== null) {
+    leaderboard.forEach((ele) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${ele.name}</td>
+        <td>${ele.score}</td>
+      `;
+      leaderContent.appendChild(row);
+    });
+  }
+};
 
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-
-    return element;
-}
-
-document.body.appendChild(component());
+ displayScores();
