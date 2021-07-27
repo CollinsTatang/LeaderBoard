@@ -1,7 +1,17 @@
 body {
-    background-color: bisque;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
-.hello {
-    color: red;
+.inner-container {
+  justify-content: space-around;
+}
+
+.form {
+  flex-direction: column;
+}
+
+.btn {
+  border-radius: 5px;
 }
