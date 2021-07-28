@@ -46,25 +46,25 @@ const btn = document.querySelector('#submit');
 const displayScores = async () => {
   const api = await getScores();
   const sortedData = topScores(api.result);
-    sortedData.forEach((ele) => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
+  sortedData.forEach((ele) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
         <td>${ele.user}</td>
         <td>${ele.score}</td>
       `;
-      leaderContent.appendChild(row);
-    });
+    leaderContent.appendChild(row);
+  });
 };
 
 btn.addEventListener('click', () => {
   const names = document.querySelector('.name').value;
   const scores = document.querySelector('.score').value;
-  
-    postScore(names, scores);
-    clearFields();
+
+  postScore(names, scores);
+  clearFields();
 });
 
 const refreshContent = document.querySelector('.btn-refresh');
 refreshContent.addEventListener('click', refresh);
 
- displayScores();
+displayScores();
