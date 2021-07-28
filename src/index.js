@@ -1,7 +1,10 @@
+import { getScores, postScore } from './js/api';
+import { topScores, refresh, clearFields } from './js/action';
 import './style.css';
 
 const body = document.querySelector('body');
 body.innerHTML = ` 
+
 <div class="container mt-3">
     <div class=" h1 font-weight-bold">Leaderboard</div>
     <div class="row"> 
@@ -9,7 +12,7 @@ body.innerHTML = `
       <div class="scores-container">
         <div class="d-flex">
           <div class="h4 font-weight-bold">Recent scores</div>
-          <button type="button" class="btn btn-primary btn-sm"> Refresh</button>
+          <button type="button" class="btn btn-primary btn-sm btn-refresh"> Refresh</button>
         </div>
         <div class="">
           <table class="table table-striped mt-4">
@@ -38,28 +41,30 @@ body.innerHTML = `
 `;
 
 const leaderContent = document.querySelector('#boardList');
-const leaderboard = [
-  {
-    name: 'Collins Tatang',
-    score: 70,
-  },
-  {
-    name: 'Tatang James',
-    score: 100,
-  },
-];
+const btn = document.querySelector('#submit');
 
 const displayScores = async () => {
-  if (leaderboard !== null) {
-    leaderboard.forEach((ele) => {
+  const api = await getScores();
+  const sortedData = topScores(api.result);
+    sortedData.forEach((ele) => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${ele.name}</td>
+        <td>${ele.user}</td>
         <td>${ele.score}</td>
       `;
       leaderContent.appendChild(row);
     });
-  }
 };
 
-displayScores();
+btn.addEventListener('click', () => {
+  const names = document.querySelector('.name').value;
+  const scores = document.querySelector('.score').value;
+  
+    postScore(names, scores);
+    clearFields();
+});
+
+const refreshContent = document.querySelector('.btn-refresh');
+refreshContent.addEventListener('click', refresh);
+
+ displayScores();
