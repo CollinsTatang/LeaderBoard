@@ -3,12 +3,4 @@ const topScores = (scores) => scores.sort((a, b) => {
   return 1;
 });
 
-const refresh = () => {
-  window.location.reload();
-};
-
-const clearFields = () => {
-  document.querySelector('.name').value = '';
-  document.querySelector('.score').value = '';
-};
-export { topScores, refresh, clearFields };
+export default topScores;

@@ -1,5 +1,5 @@
 import { getScores, postScore } from './asset/api.js';
-import { topScores, refresh, clearFields } from './asset/action.js';
+import topScores from './asset/action.js';
 import './style.css';
 
 const leaderContent = document.querySelector('#boardList');
@@ -18,6 +18,11 @@ const displayScores = async () => {
   });
 };
 
+const clearFields = () => {
+  document.querySelector('.name').value = '';
+  document.querySelector('.score').value = '';
+};
+
 btn.addEventListener('click', () => {
   const names = document.querySelector('.name').value;
   const scores = document.querySelector('.score').value;
@@ -25,6 +30,10 @@ btn.addEventListener('click', () => {
   postScore(names, scores);
   clearFields();
 });
+
+const refresh = () => {
+  window.location.reload();
+};
 
 const refreshContent = document.querySelector('.btn-refresh');
 refreshContent.addEventListener('click', refresh);
