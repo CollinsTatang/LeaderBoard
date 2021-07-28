@@ -1,5 +1,5 @@
-import { getScores, postScore } from './js/api';
-import { topScores, refresh, clearFields } from './js/action';
+import { getScores, postScore } from './asset/api.js';
+import { topScores, refresh, clearFields } from './asset/action.js';
 import './style.css';
 
 const body = document.querySelector('body');
