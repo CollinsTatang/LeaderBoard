@@ -1,7 +1,11 @@
 # LeaderBoard
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
-
-## Learning objectives
+![LeaderBoard](loarder.png)
+## Learning objective
+- Use callbacks and promises.
+- Learn how to use proper ES6 syntax.
+- Use ES6 modules to write modular JavaScript.
+- Use webpack to bundle JavaScript.
 - Send and receive data from an API.
 - Use API documentation.
 - Understand and use JSON.
@@ -9,12 +13,15 @@
 
 
 ### Project requirements
+- Use Gitflow in managing the project branch.
+- Create an npm project with webpack.
+- Use ES6 modules, with import and export
 - Read the [Leaderboard API documentation](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) to learn how to use this API.
 - Create a new game with the name of your choice by using the API.
 - Implement the "Refresh" button (receiving data from the API and parsing the JSON).
 - Implement the form "Submit" button (sending data to the API).
 - Use async and await JavaScript features to consume the API.
-- No styling is required.
+- You can use plain CSS or any CSS framework.
   
 ========
 
